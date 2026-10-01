@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Our Story — For Swetha ❤️</title>
+  <meta name="description" content="A handcrafted interactive love story website celebrating our journey from school to forever.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+  <link rel="apple-touch-icon" href="assets/icons/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark">
+
+  <!-- Floating Ambient Particles Canvas -->
+  <canvas id="ambient-canvas" class="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Audio Player Elements -->
+  <audio id="bg-audio" preload="auto" loop src="assets/audio/bg.mp3"></audio>
+
+  <!-- Floating Top Navigation & Progress Header -->
+  <header id="main-header" class="main-header">
+    <div class="header-inner">
+      <a href="#welcome" class="brand-logo" id="brand-logo" aria-label="Go to start">
+        <span class="heart-icon">💖</span>
+        <span class="brand-text">Our Story</span>
+      </a>
+
+      <!-- Chapter Tabs -->
+      <nav class="chapter-nav" id="chapter-nav" aria-label="Chapter navigation">
+        <button class="nav-tab active" data-chapter="1" id="tab-ch1" aria-label="Chapter 1: How It Started">
+          <span class="tab-num">01</span>
+          <span class="tab-title">How It Started</span>
+        </button>
+        <button class="nav-tab" data-chapter="2" id="tab-ch2" aria-label="Chapter 2: When We Became Us">
+          <span class="tab-num">02</span>
+          <span class="tab-title">When We Became Us</span>
+        </button>
+        <button class="nav-tab" data-chapter="3" id="tab-ch3" aria-label="Chapter 3: The Memories">
+          <span class="tab-num">03</span>
+          <span class="tab-title">Memories & Games</span>
+        </button>
+        <button class="nav-tab" data-chapter="4" id="tab-ch4" aria-label="Chapter 4: Still Us">
+          <span class="tab-num">04</span>
+          <span class="tab-title">Still Us</span>
+        </button>
+      </nav>
+
+      <!-- Music & Utility Controls -->
+      <div class="header-controls">
+        <button id="music-toggle" class="control-btn music-btn" aria-label="Toggle background music" title="Toggle Music">
+          <span class="music-icon" id="music-icon">🎵</span>
+          <span class="sound-wave" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+        <div class="progress-pill" id="progress-pill" title="Story progress">
+          <span id="progress-text">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Indicator Bar -->
+    <div class="story-progress-container" aria-label="Story progress bar">
+      <div class="story-progress-bar" id="story-progress-bar"></div>
+    </div>
+  </header>
+
+  <!-- WELCOME / HERO LANDING OVERLAY -->
+  <section id="welcome" class="section welcome-section active">
+    <div class="welcome-container">
+      <div class="welcome-badge">
+        <span class="sparkle">✨</span> Handcrafted with Love for <strong class="girlfriend-name-text">Swetha</strong>
+      </div>
+      <h1 class="welcome-title">Every Love Story is Beautiful,<br><span class="gradient-text">But Ours is My Favourite.</span></h1>
+      <p class="welcome-subtitle">
+        A tiny interactive world coded personally for you. Every memory, every milestone, and everything I sometimes struggle to say in words.
+      </p>
+
+      <div class="audio-hint-box">
+        <span class="headphone-icon">🎧</span>
+        <span>For the best emotional experience, turn up your volume or put on headphones.</span>
+      </div>
+
+      <button id="start-mission-btn" class="btn btn-primary btn-glow" aria-label="Start the journey">
+        <span class="btn-heart">❤️</span> Start Our Story
+      </button>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>Scroll down to explore</span>
+        <div class="mouse-icon"><div class="wheel"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN STORY CONTAINER -->
+  <main id="story-container" class="story-container">
+
+    <!-- ========================================================== -->
+    <!-- CHAPTER 01: HOW IT STARTED / BEFORE WE BECAME US -->
+    <!-- ========================================================== -->
+    <article id="chapter-1" class="chapter-view chapter-1 active" aria-labelledby="ch1-heading">
+      <div class="chapter-header-banner">
+        <div class="chapter-pill">Chapter 01</div>
+        <h2 id="ch1-heading" class="chapter-title">Before We Became Us</h2>
+        <p class="chapter-lead">"Something ordinary was about to become something important."</p>
+      </div>
+
+      <!-- SCENE 1: SCHOOL INTRODUCTION -->
+      <section class="story-card anime-school-card">
+        <div class="card-visual-wrapper">
+          <img src="assets/images/school-boy-girl.jpg" alt="Anime-style high school boy and girl noticing each other in sunset corridor" class="card-img school-img" id="school-image" loading="lazy">
+          <div class="visual-overlay"></div>
+          <div class="memory-stamp">School Days • Where It Began</div>
+        </div>
+        <div class="card-content">
+          <span class="story-tag">The Beginning</span>
+          <h3 class="story-card-title">We Met in School</h3>
+          <p class="story-prose">
+            It started in the bustling hallways and the golden evening sunlight of our school. 
+            Two students carrying bags, crossing paths between classes, noticing each other in the quiet moments.
+          </p>
+          <p class="story-prose highlight-prose">
+            Neither of us knew that an ordinary school corridor was about to become the birthplace of the most important chapter of our lives.
+          </p>
+        </div>
+      </section>
+
+      <!-- SCENE 2: SMALL CONVERSATIONS -->
+      <section class="story-card chat-scene-card">
+        <div class="card-content">
+          <span class="story-tag">Small Chats</span>
+          <h3 class="story-card-title">How We Started Talking</h3>
+          <p class="story-prose">
+            At first, there were no grand speeches. Just little chats, casual questions, and everyday thoughts exchanged across the screen.
+          </p>
+          
+          <!-- Interactive Chat Simulator -->
+          <div class="chat-mockup-container" id="chat-simulator" aria-label="Interactive chat simulator">
+            <div class="chat-mockup-header">
+              <div class="chat-avatar">S</div>
+              <div class="chat-user-info">
+                <span class="chat-user-name">Swetha ❤️</span>
+                <span class="chat-status">Online • Always on my mind</span>
+              </div>
+            </div>
+            <div class="chat-messages-box" id="chat-messages">
+              <div class="chat-bubble received animate-pop" style="animation-delay: 0.2s;">
+                <p>Hey! 👋</p>
+                <span class="chat-time">4:15 PM</span>
+              </div>
+              <div class="chat-bubble sent animate-pop" style="animation-delay: 0.6s;">
+                <p>Hey Swetha! How was your day today?</p>
+                <span class="chat-time">4:16 PM</span>
+              </div>
+              <div class="chat-bubble received animate-pop" style="animation-delay: 1.0s;">
+                <p>It was okay! Did you finish that assignment we had? 😅</p>
+                <span class="chat-time">4:17 PM</span>
+              </div>
+              <div class="chat-bubble sent animate-pop" style="animation-delay: 1.4s;">
+                <p>Barely! Spent most of the time chatting with you instead. 😊</p>
+                <span class="chat-time">4:18 PM</span>
+              </div>
+            </div>
+            <div class="chat-interactive-action">
+              <button id="chat-reply-btn" class="btn btn-sm btn-outline">
+                <span>💬 Send Next Message</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="reflection-quote">
+            <p>"At first, it was just small conversations. Nothing dramatic. Just little chats. But somehow, I started looking forward to them every single day."</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCENE 3: FIRST MEMORABLE OUTING (JUICE SHOP & ICE CREAM) -->
+      <section class="story-card icecream-scene-card">
+        <div class="card-visual-wrapper">
+          <img src="assets/images/photo-01.jpg" alt="Cozy juice shop date with ice cream and juices" class="card-img" id="photo-01" loading="lazy">
+          <div class="visual-overlay"></div>
+          <div class="memory-stamp">First Outing • The Juice Shop</div>
+        </div>
+        <div class="card-content">
+          <span class="story-tag">First Memorable Moment</span>
+          <h3 class="story-card-title">One Spoon. One Ice Cream.</h3>
+          <p class="story-prose">
+            Our very first memorable outing was sitting across from each other in a cozy little juice shop, sharing a single bowl of ice cream with a single spoon.
+          </p>
+
+          <!-- Interactive Ice Cream / Spoon Widget -->
+          <div class="interactive-icecream-box" id="icecream-interaction">
+            <div class="icecream-bowl-wrapper">
+              <div class="bowl-art">
+                <div class="icecream-scoop strawberry"></div>
+                <div class="icecream-scoop mango"></div>
+                <div class="icecream-scoop chocolate"></div>
+                <div class="cherry">🍒</div>
+              </div>
+              <div class="animated-spoon" id="animated-spoon" title="Click to take a sweet bite!">
+                🥄
+              </div>
+            </div>
+            <div class="icecream-prompt">
+              <button id="take-bite-btn" class="btn btn-sm btn-primary">
+                <span>🥄 Take a bite together</span>
+              </button>
+              <p id="icecream-counter-text" class="icecream-status">Bites shared: <strong id="bite-count">1</strong> • Sweetness: 100%</p>
+            </div>
+          </div>
+
+          <div class="poetic-lines">
+            <div class="line">One spoon.</div>
+            <div class="line">One ice cream.</div>
+            <div class="line">Two people.</div>
+            <div class="line highlight">One memory I'll never forget.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCENE 4: WHEN I REALIZED I LIKED HER -->
+      <section class="story-card realization-card">
+        <div class="card-content text-center">
+          <span class="story-tag">The Turning Point</span>
+          <h3 class="story-card-title emotional-title">When Did I Realize I Liked You?</h3>
+          <div class="heart-pulse-glow" aria-hidden="true">💖</div>
+          <div class="realization-text-block">
+            <p class="emotional-quote">
+              "It wasn't one dramatic movie moment.<br>
+              It was the gentle, consistent way you cared."
+            </p>
+            <p class="emotional-subquote">
+              "Slowly, your care for me became more important than everyone else. That was when I realized... I didn't just enjoy talking to you. I cared about you with all my heart."
+            </p>
+          </div>
+          
+          <div class="chapter-end-cta">
+            <p class="transition-lead">Something special was changing...</p>
+            <button class="btn btn-primary btn-glow next-chapter-btn" data-target="2" id="goto-ch2-btn">
+              Continue to Chapter 02 <span class="arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </article>
+
+
+    <!-- ========================================================== -->
+    <!-- CHAPTER 02: WHEN WE BECAME US -->
+    <!-- ========================================================== -->
+    <article id="chapter-2" class="chapter-view chapter-2" aria-labelledby="ch2-heading">
+      <div class="chapter-header-banner">
+        <div class="chapter-pill">Chapter 02</div>
+        <h2 id="ch2-heading" class="chapter-title">When We Became Us</h2>
+        <p class="chapter-lead">The early milestones that turned feelings into our forever story.</p>
+      </div>
+
+      <!-- MILESTONE 1: FIRST KISS -->
+      <section class="story-card milestone-card">
+        <div class="card-visual-wrapper">
+          <img src="assets/images/first-kiss-memory.jpg" alt="Romantic silhouette in the computer class corridor" class="card-img" id="first-kiss-img" loading="lazy">
+          <div class="visual-overlay"></div>
+          <div class="date-badge">October 25, 2023</div>
+        </div>
+        <div class="card-content">
+          <span class="story-tag">Milestone 01</span>
+          <h3 class="story-card-title">Our First Kiss</h3>
+          <div class="location-badge">📍 Corridor of Computer Class</div>
+          <p class="story-prose">
+            Before we officially became us, in the quiet corridor outside computer class, the world faded away into gentle shadows and soft ambient warmth.
+          </p>
+          <div class="quote-pill">
+            "A stolen second that made the universe pause."
+          </div>
+        </div>
+      </section>
+
+      <!-- MILESTONE 2: FIRST HUG -->
+      <section class="story-card milestone-card">
+        <div class="card-visual-wrapper">
+          <img src="assets/images/first-hug.jpg" alt="Two silhouettes embracing in a backyard garden at night" class="card-img" id="first-hug-img" loading="lazy">
+          <div class="visual-overlay"></div>
+          <div class="date-badge">November 02, 2023</div>
+        </div>
+        <div class="card-content">
+          <span class="story-tag">Milestone 02</span>
+          <h3 class="story-card-title">Our First Hug</h3>
+          <div class="location-badge">📍 Backyard of Her Home</div>
+          <p class="story-prose">
+            Underneath the starlit sky and the gentle glow of fairy lights in your backyard garden. Two people stepping closer, finding comfort in each other's arms.
+          </p>
+          
+          <div class="interactive-hug-widget" id="hug-widget">
+            <div class="hug-stage">
+              <span class="silhouette boy" id="sil-boy">👦</span>
+              <span class="heart-pulse-center" id="hug-heart">❤️</span>
+              <span class="silhouette girl" id="sil-girl">👧</span>
+            </div>
+            <button id="hug-btn" class="btn btn-sm btn-outline">
+              <span>✨ Feel the Warmth</span>
+            </button>
+          </div>
+
+          <p class="story-prose highlight-prose">
+            "Some moments don't need many words. That hug said everything."
+          </p>
+        </div>
+      </section>
+
+      <!-- MILESTONE 3: THE CONFESSION -->
+      <section class="story-card milestone-card confession-card">
+        <div class="card-content">
+          <span class="story-tag">Milestone 03 • The Confession</span>
+          <h3 class="story-card-title">I Confessed First</h3>
+          <p class="story-prose">
+            We both already knew what was in our hearts. The feelings were undeniable. But on a quiet November night, I sent that one reel that changed everything.
+          </p>
+
+          <!-- Original Instagram-style UI -->
+          <div class="reel-confession-mockup" id="confession-ui" aria-label="Confession message mock">
+            <div class="reel-header">
+              <div class="direct-badge">💬 Direct Message</div>
+              <div class="reel-timestamp">10:37 PM</div>
+            </div>
+            <div class="reel-content-box">
+              <div class="reel-thumbnail">
+                <span class="play-icon">▶</span>
+                <span class="reel-title">"I want this to be us forever..."</span>
+              </div>
+              <div class="reel-message-bubble">
+                <p>Hey Swetha... I don't just like you. I'm completely in love with you. Will you be mine forever?</p>
+                <div class="status-receipt">
+                  <span>Message Sent • Seen • Accepted ❤️</span>
+                </div>
+              </div>
+            </div>
+            <div class="official-date-badge">
+              <div class="big-date">NOVEMBER 14, 2023</div>
+              <div class="big-time">10:37 PM</div>
+              <div class="tagline">That's when we officially became forever.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MILESTONE 4: ANNIVERSARY DATE -->
+      <section class="story-card anniversary-date-card">
+        <div class="card-content text-center">
+          <span class="story-tag">The Special Date</span>
+          <h3 class="story-card-title">Why We Celebrate November 15th</h3>
+          <div class="birthday-candle-icon">🎂✨</div>
+          <p class="story-prose">
+            We celebrate our anniversary on <strong>November 15th</strong>.
+          </p>
+          <p class="story-prose">
+            Not only because it marks our official beginning, but because <strong>November 15th is your birthday</strong>.
+          </p>
+          <div class="double-celebration-pill">
+            <span class="gem-icon">💎</span>
+            <span>One date became two reasons to celebrate. Happy Birthday & Happy Anniversary!</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- MILESTONE 5: FIRST NIGHT RIDE -->
+      <section class="story-card night-ride-card">
+        <div class="card-visual-wrapper">
+          <img src="assets/images/night-ride.jpg" alt="Motorcycle night ride on coastal road" class="card-img" id="night-ride-img" loading="lazy">
+          <div class="visual-overlay"></div>
+          <div class="memory-stamp">First Night Ride • After Coaching Class</div>
+        </div>
+        <div class="card-content">
+          <span class="story-tag">Milestone 05</span>
+          <h3 class="story-card-title">The First Night Ride</h3>
+          <p class="story-prose">
+            Computer coaching class ended. The engines purred. The cool night air rushed past us as streetlights blurred into golden streams.
+          </p>
+          
+          <!-- Interactive Motorcycle Road Widget -->
+          <div class="interactive-road-box" id="road-animation-box" title="Click to accelerate the motorcycle!">
+            <div class="road-stars"></div>
+            <div class="road-track">
+              <div class="road-divider"></div>
+            </div>
+            <div class="motorcycle-sprite" id="moto-sprite">
+              🏍️💨
+            </div>
+            <button id="rev-engine-btn" class="btn btn-sm btn-outline">
+              <span>⚡ Accelerate the Bike</span>
+            </button>
+          </div>
+
+          <div class="reflection-quote">
+            <p>"Computer coaching ended. The night ride began. And an ordinary night became one of my favourite memories."</p>
+          </div>
+
+          <div class="chapter-end-cta">
+            <button class="btn btn-primary btn-glow next-chapter-btn" data-target="3" id="goto-ch3-btn">
+              Continue to Chapter 03 <span class="arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </article>
+
+
+    <!-- ========================================================== -->
+    <!-- CHAPTER 03: THE MEMORIES THAT BECAME OURS (INTERACTIVE & GAMES) -->
+    <!-- ========================================================== -->
+    <article id="chapter-3" class="chapter-view chapter-3" aria-labelledby="ch3-heading">
+      <div class="chapter-header-banner">
+        <div class="chapter-pill">Chapter 03</div>
+        <h2 id="ch3-heading" class="chapter-title">The Memories That Became Ours</h2>
+        <p class="chapter-lead">Playful adventures, laughters, tickets, cakes, and interactive games.</p>
+      </div>
+
+      <!-- MEMORY CARDS GRID -->
+      <div class="memories-grid">
+        
+        <!-- MEMORY 1: NIGHT RIDE TAP -->
+        <div class="memory-interactive-card" id="mem-night-ride">
+          <div class="card-media">
+            <img src="assets/images/photo-02.jpg" alt="Night ride memory" class="mem-img" loading="lazy">
+            <span class="media-badge">Memory 01</span>
+          </div>
+          <div class="card-body">
+            <h4>First Night Ride</h4>
+            <p>Our magical night ride after computer coaching class with the cool breeze in our hair.</p>
+            <button class="btn btn-sm btn-outline tap-memory-btn" data-msg="Our first night ride after computer coaching class. An unforgettable evening with you! 🌙">
+              🔍 Tap to Reveal Details
+            </button>
+          </div>
+        </div>
+
+        <!-- MEMORY 2: MGM THEME PARK TICKET -->
+        <div class="memory-interactive-card ticket-card-container" id="mem-mgm">
+          <div class="card-media">
+            <img src="assets/images/mgm-date.jpg" alt="MGM Theme park date" class="mem-img" loading="lazy">
+            <span class="media-badge">Memory 02</span>
+          </div>
+          <div class="card-body">
+            <h4>MGM Theme Park Date</h4>
+            
+            <!-- Authentic Amusement Park Ticket UI -->
+            <div class="theme-park-ticket" id="mgm-ticket">
+              <div class="ticket-header">
+                <span class="park-name">🎡 MGM THEME PARK</span>
+                <span class="ticket-type">ADMIT TWO</span>
+              </div>
+              <div class="ticket-body">
+                <div class="ticket-info-row">
+                  <span>EVENT:</span>
+                  <strong>DATE WITH YOU ❤️</strong>
+                </div>
+                <div class="ticket-info-row">
+                  <span>PRICE:</span>
+                  <strong class="ticket-price">₹579</strong>
+                </div>
+                <div class="ticket-barcode">||| | |||| || | ||| |||| | ||</div>
+              </div>
+            </div>
+
+            <p class="ticket-quote">"A ₹579 ticket. Countless unforgettable memories."</p>
+          </div>
+        </div>
+
+        <!-- MEMORY 3: HACKATHON DAY (FEB 28, 2024) -->
+        <div class="memory-interactive-card" id="mem-hackathon">
+          <div class="card-media">
+            <img src="assets/images/hackathon.jpg" alt="Hackathon Day and bike ride" class="mem-img" loading="lazy">
+            <span class="media-badge">February 28, 2024</span>
+          </div>
+          <div class="card-body">
+            <h4>Hackathon & First Bike Ride</h4>
+            <p>February 28, 2024 — That was also the day you rode the bike for the first time!</p>
+            
+            <div class="mini-bike-interactive" id="hackathon-bike">
+              <span class="bike-icon">🏍️</span>
+              <button id="cheer-bike-btn" class="btn btn-sm btn-outline">
+                <span>🛵 Cheer the Bike Ride!</span>
+              </button>
+            </div>
+            <p class="humor-tag">"First hackathon. First bike ride. Definitely a memorable day. 😂"</p>
+          </div>
+        </div>
+
+        <!-- MEMORY 4: SECOND ANNIVERSARY (NOV 15, 2025) -->
+        <div class="memory-interactive-card" id="mem-anniversary">
+          <div class="card-media">
+            <img src="assets/images/anniversary-2025.jpg" alt="Second anniversary cake and celebration" class="mem-img" loading="lazy">
+            <span class="media-badge">November 15, 2025</span>
+          </div>
+          <div class="card-body">
+            <h4>Our Second Anniversary</h4>
+            <p class="story-prose">
+              "I made a cake. We cut it together. We served food with our friends. Two years. From small conversations... to something worth celebrating."
+            </p>
+            <div class="cake-interactive-box">
+              <span class="cake-emoji" id="cake-blow-icon">🎂</span>
+              <button id="blow-candles-btn" class="btn btn-sm btn-primary">
+                <span>🕯️ Blow the Candles</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ========================================== -->
+      <!-- MINI GAMES SUITE -->
+      <!-- ========================================== -->
+      <div class="games-suite-section">
+        <div class="section-title-wrap text-center">
+          <span class="story-tag">Interactive World</span>
+          <h3 class="games-suite-title">Our Interactive Mini-Games</h3>
+          <p class="games-subtitle">Four playful challenges built around our memories. Can you solve them all?</p>
+        </div>
+
+        <!-- GAME 1: 3x3 JIGSAW PUZZLE -->
+        <section class="game-card jigsaw-section" id="jigsaw-puzzle-game">
+          <div class="game-header">
+            <div class="game-badge">Game 01</div>
+            <h4>3x3 Jigsaw Puzzle</h4>
+            <p class="game-instruction">"Some memories only make sense when all the pieces come together."</p>
+          </div>
+
+          <div class="puzzle-layout">
+            <div class="puzzle-grid-wrapper">
+              <div id="jigsaw-board" class="jigsaw-board" aria-label="3x3 jigsaw board">
+                <!-- 9 tiles injected by JS -->
+              </div>
+              <div id="jigsaw-win-overlay" class="puzzle-win-overlay hidden">
+                <div class="win-content">
+                  <span class="win-star">🎉</span>
+                  <h5>Piece by piece...</h5>
+                  <p>That's how our story became ours. ❤️</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="puzzle-controls">
+              <div class="puzzle-stats">
+                <span>Moves: <strong id="jigsaw-moves">0</strong></span>
+                <span>Matches: <strong id="jigsaw-matches">0/9</strong></span>
+              </div>
+              <button id="jigsaw-shuffle-btn" class="btn btn-sm btn-outline">
+                <span>🔀 Shuffle Puzzle</span>
+              </button>
+              <button id="jigsaw-reset-btn" class="btn btn-sm btn-outline">
+                <span>🔄 Reset</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- GAME 2: 3x3 SLIDING PUZZLE -->
+        <section class="game-card sliding-section" id="sliding-puzzle-game">
+          <div class="game-header">
+            <div class="game-badge">Game 02</div>
+            <h4>3x3 Sliding Puzzle</h4>
+            <p class="game-instruction">"Can you put this memory back together?"</p>
+          </div>
+
+          <div class="puzzle-layout">
+            <div class="puzzle-grid-wrapper">
+              <div id="sliding-board" class="sliding-board" aria-label="3x3 sliding puzzle board">
+                <!-- 8 tiles + 1 empty space injected by JS -->
+              </div>
+              <div id="sliding-win-overlay" class="puzzle-win-overlay hidden">
+                <div class="win-content">
+                  <span class="win-star">✨</span>
+                  <h5>Another memory complete! ❤️</h5>
+                  <p>You solved the sliding puzzle!</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="puzzle-controls">
+              <div class="puzzle-stats">
+                <span>Moves: <strong id="sliding-moves">0</strong></span>
+                <span id="sliding-status">Tap adjacent tiles to slide</span>
+              </div>
+              <button id="sliding-shuffle-btn" class="btn btn-sm btn-outline">
+                <span>🔀 Shuffle Tiles</span>
+              </button>
+              <button id="sliding-reset-btn" class="btn btn-sm btn-outline">
+                <span>🔄 Reset</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- GAME 3: MEMORY MATCHING GAME (8 CARDS / 4 PAIRS) -->
+        <section class="game-card memory-matching-section" id="memory-game">
+          <div class="game-header">
+            <div class="game-badge">Game 03</div>
+            <h4>Memory Matching Game</h4>
+            <p class="game-instruction">Match 4 pairs of our favourite relationship milestones.</p>
+          </div>
+
+          <div class="memory-game-container">
+            <div class="memory-grid" id="memory-grid" aria-label="Memory match cards">
+              <!-- 8 cards injected by JS -->
+            </div>
+            <div id="memory-win-msg" class="game-win-banner hidden">
+              <span>💖 You remembered them all. ❤️</span>
+            </div>
+            <div class="puzzle-controls">
+              <div class="puzzle-stats">
+                <span>Flips: <strong id="mem-flips">0</strong></span>
+                <span>Pairs: <strong id="mem-pairs">0/4</strong></span>
+              </div>
+              <button id="memory-restart-btn" class="btn btn-sm btn-outline">
+                <span>🔄 Restart Cards</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- GAME 4: RELATIONSHIP QUIZ -->
+        <section class="game-card quiz-section" id="relationship-quiz">
+          <div class="game-header">
+            <div class="game-badge">Game 04</div>
+            <h4>Our Playful Relationship Quiz</h4>
+            <p class="game-instruction">Let's see how well we agree on our daily habits! 😂</p>
+          </div>
+
+          <div class="quiz-container" id="quiz-container">
+            <div class="quiz-progress-bar-wrap">
+              <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+            </div>
+            
+            <div id="quiz-card" class="quiz-card">
+              <div class="quiz-q-num" id="quiz-q-num">Question 1 of 4</div>
+              <h5 class="quiz-question" id="quiz-question-text">Who is more stubborn?</h5>
+              <div class="quiz-options-list" id="quiz-options">
+                <!-- Options injected by JS -->
+              </div>
+              <div class="quiz-feedback hidden" id="quiz-feedback"></div>
+            </div>
+
+            <div id="quiz-results" class="quiz-results hidden">
+              <span class="trophy-icon">🏆</span>
+              <h5>Quiz Completed!</h5>
+              <p id="quiz-score-text">We might disagree on who's more stubborn, but we 100% agree on being together! ❤️</p>
+              <button id="quiz-retake-btn" class="btn btn-sm btn-outline">Retake Quiz</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- CHAPTER 3 FOOTER CTA -->
+      <div class="chapter-end-cta text-center">
+        <p class="transition-lead">Ready for the heart of our story?</p>
+        <button class="btn btn-primary btn-glow next-chapter-btn" data-target="4" id="goto-ch4-btn">
+          Continue to Chapter 04 <span class="arrow">→</span>
+        </button>
+      </div>
+    </article>
+
+
+    <!-- ========================================================== -->
+    <!-- CHAPTER 04: STILL US (THE EMOTIONAL HEART) -->
+    <!-- ========================================================== -->
+    <article id="chapter-4" class="chapter-view chapter-4" aria-labelledby="ch4-heading">
+      <div class="chapter-header-banner emotional-banner">
+        <div class="chapter-pill">Chapter 04</div>
+        <h2 id="ch4-heading" class="chapter-title serif-title">Still Us</h2>
+        <p class="chapter-lead">The honest, sincere, and unfiltered heart of everything I feel.</p>
+      </div>
+
+      <!-- SECTION 1: THE FIGHTS -->
+      <section class="story-card emotional-card fights-card">
+        <div class="card-content">
+          <span class="story-tag muted-tag">Real & Honest</span>
+          <h3 class="story-card-title serif-subheading">The Silly Fights</h3>
+          <div class="emotional-text-flow">
+            <p class="prose-line">We've had our silly fights.</p>
+            <p class="prose-line">Sometimes over the smallest, most trivial things.</p>
+            <p class="prose-line emphasis">And sometimes... the real reason was simply that I wasn't giving you enough of my time.</p>
+            <p class="prose-line">I know how that must have felt, and I never want to brush that aside.</p>
+            <p class="prose-line highlight">
+              Yet, our arguments never seem to last even a single day.<br>
+              Because underneath the frustration, underneath every misunderstanding... we still care about each other more than anything else.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: WHAT DO I GENUINELY LOVE ABOUT YOU? -->
+      <section class="story-card emotional-card love-reveal-card">
+        <div class="card-content text-center">
+          <span class="story-tag muted-tag">The Question</span>
+          <h3 class="story-card-title serif-subheading">"What do I genuinely love about you?"</h3>
+          
+          <div class="interactive-reveal-box" id="love-reveal-box">
+            <button id="reveal-love-btn" class="btn btn-outline btn-glow">
+              <span>✨ Tap to Reveal the Answer</span>
+            </button>
+            <div id="love-answer-content" class="love-answer-content hidden">
+              <div class="huge-love-word animate-glow">YOU.</div>
+              <p class="love-explanation">
+                "I could give you a hundred reasons.<br>
+                Your smile, your kindness, the way you look at me, your laughter...<br>
+                But somehow, they all lead back to the exact same person."
+              </p>
+              <p class="love-conclusion"><strong>You. Just you, exactly as you are.</strong></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: THE STRUGGLE TO EXPRESS (CENTRAL EMOTIONAL MESSAGE) -->
+      <section class="story-card emotional-card expressing-card">
+        <div class="card-content">
+          <span class="story-tag muted-tag">From the Bottom of My Heart</span>
+          <h3 class="story-card-title serif-subheading">There's Something I've Never Been Very Good At</h3>
+          
+          <div class="staggered-lines-container">
+            <div class="stagger-line">Expressing what I feel.</div>
+            <div class="stagger-line">I care more than I say.</div>
+            <div class="stagger-line">I love more than I show.</div>
+            <div class="stagger-line">I miss you more than I admit.</div>
+            <div class="stagger-line">I worry about you more than you probably realize.</div>
+            <div class="stagger-line muted-note">But sometimes... I don't know how to put all of that into words.</div>
+          </div>
+
+          <div class="growth-commitment-box">
+            <p>And I know expressing love is important.</p>
+            <p>So I want to learn.</p>
+            <p>Not just to feel it in silence...</p>
+            <p class="highlight-action">
+              <strong>To show it. To say it. To make sure you know it every single day.</strong>
+            </p>
+            <p class="final-conviction">
+              <em>"Because loving you isn't something I want to be bad at expressing."</em>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: THE CALM APOLOGY & LETTER -->
+      <section class="story-card emotional-card letter-card">
+        <div class="card-content">
+          <div class="letter-prelude">
+            <p>Okay...</p>
+            <p>No more games. No more puzzles.</p>
+            <p>Just me talking to you.</p>
+          </div>
+
+          <div class="handcrafted-letter">
+            <div class="letter-header">
+              <span class="dear-text">Dearest <span class="girlfriend-name-text">Swetha</span>,</span>
+            </div>
+            <div class="letter-body" id="apology-letter-body">
+              <p>I know saying sorry doesn't automatically fix everything.</p>
+              <p>I know I could have handled some things differently.</p>
+              <p>And I'm genuinely sorry for the times I've hurt you or made you feel like you weren't getting enough of me.</p>
+              <p>I'm not asking you to suddenly stop being angry. I'm not asking you to forget anything.</p>
+              <p>I just want you to know that I care about you more than I have sometimes been able to express. And I want to get better at that.</p>
+              <p class="letter-highlight">Because you matter to me. More than I have probably managed to put into words.</p>
+            </div>
+            <div class="letter-signoff">
+              <span>Always yours,</span>
+              <strong id="your-name-display" class="your-name-text">YOUR NAME</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: FINAL QUESTION & INTERACTIVE CHOICE -->
+      <section class="story-card emotional-card final-choice-card">
+        <div class="card-content text-center">
+          <span class="story-tag muted-tag">One Last Thing</span>
+          <h3 class="story-card-title serif-subheading">One last question...</h3>
+          <p class="final-q-lead">Can we talk?</p>
+
+          <div class="choice-buttons-row" id="final-choice-buttons">
+            <button id="btn-choice-maybe" class="btn btn-primary btn-glow choice-btn">
+              <span>Maybe ❤️</span>
+            </button>
+            <button id="btn-choice-angry" class="btn btn-outline choice-btn">
+              <span>Still Angry 😤</span>
+            </button>
+          </div>
+
+          <!-- RESPONSE A: STILL ANGRY -->
+          <div id="response-angry" class="choice-response-box hidden">
+            <div class="response-icon">🤍</div>
+            <h4>Okay. ❤️</h4>
+            <p>I understand completely. Take your time.</p>
+            <p>I won't force you to forgive me or rush your feelings.</p>
+            <p class="gentle-promise">Whenever you're ready to talk... I'll be right here waiting.</p>
+          </div>
+
+          <!-- RESPONSE B: MAYBE -->
+          <div id="response-maybe" class="choice-response-box hidden">
+            <div class="response-icon">💖</div>
+            <h4>That's all I wanted.</h4>
+            <p>A chance to talk and hear your voice.</p>
+            <p class="gentle-promise">That's more than enough for me. ❤️</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: FINAL PHOTO & HOPEFUL ENDING -->
+      <section class="story-card final-signoff-card text-center">
+        <div class="card-visual-wrapper final-photo-wrapper">
+          <img src="assets/images/final-photo.jpg" alt="Walking together into the sunset" class="card-img final-img" id="final-photo-img" loading="lazy">
+          <div class="visual-overlay"></div>
+        </div>
+        <div class="card-content">
+          <p class="final-lead">You reached the end of our little story...</p>
+          <p class="final-hope highlight-prose">
+            "But hopefully... This isn't the end of our story. ❤️"
+          </p>
+          <div class="signature-block">
+            <p class="made-with-love">Handcrafted with all my love for Swetha</p>
+            <p class="creator-signature"><strong class="your-name-text">YOUR NAME</strong></p>
+          </div>
+          
+          <div class="final-actions-row">
+            <button id="restart-story-btn" class="btn btn-sm btn-outline">
+              <span>✨ Revisit Our Story</span>
+            </button>
+            <button id="send-hug-btn" class="btn btn-sm btn-primary">
+              <span>🤗 Send a Virtual Hug</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </article>
+
+  </main>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+  <!-- Vanilla JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
